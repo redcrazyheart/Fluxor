@@ -7,8 +7,8 @@ const CHANGE_EVENT = 'change';
 
 class baseStore extends EventEmitter {
 	handlers = [];
-	constructor(oprions) {
-		super(oprions);
+	constructor(options) {
+		super(options);
 		dispatcher.register((action) => {
 			if (this.handlers[action.type]) {
 				this.handlers[action.type](action.data);
