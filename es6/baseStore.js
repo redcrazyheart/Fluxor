@@ -10,8 +10,9 @@ class baseStore extends EventEmitter {
 	constructor(options) {
 		super(options);
 		dispatcher.register((action) => {
-			if (this.handlers[action.type]) {
-				this.handlers[action.type](action.data);
+			if (this.handlers && this.handlers[action.type]) {
+				let name = this.handlers[action.type];
+				this[name].apply(this, [action.data])
 			} else {
 
 			}
