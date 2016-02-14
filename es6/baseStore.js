@@ -1,10 +1,14 @@
 'use strict';
 
 import dispatcher from './dispatcher';
+import {EventEmitter} from 'events';
 
-class baseStore {
+const CHANGE_EVENT = 'change';
+
+class baseStore extends EventEmitter {
 	handlers = [];
-	constructor() {
+	constructor(oprions) {
+		super(oprions);
 		dispatcher.register((action) => {
 			if (this.handlers[action.type]) {
 				this.handlers[action.type](action.data);
@@ -12,6 +16,24 @@ class baseStore {
 
 			}
 		})
+	}
+
+	emitChange() {
+		this.emit(CHANGE_EVENT);
+	};
+
+	/**
+	* @param {function} callback
+	*/
+	addChangeListener(callback) {
+		this.on(CHANGE_EVENT, callback);
+	};
+
+	/**
+	* @param {function} callback
+	*/
+	removeChangeListener(callback) {
+		this.removeListener(CHANGE_EVENT, callback);
 	}
 }
 
