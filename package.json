@@ -1,6 +1,6 @@
 {
   "name": "fluxon",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A pluggable container for isomorphic flux applications",
   "main": "index.js",
   "repository": {
@@ -12,9 +12,7 @@
     "version": "babel es6 --out-dir lib && git add -A",
     "postversion": "git push && git push --tags"
   },
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.4.0",
     "babel-plugin-add-module-exports": "^0.1.1",
