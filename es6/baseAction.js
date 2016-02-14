@@ -4,7 +4,7 @@ import dispatcher from './dispatcher';
 
 class baseAction {
 	constructor() {
-		this.dispatch = function dispatcher(type, data) {
+		this.dispatch = function (type, data) {
 			dispatcher.dispatch({
 		      type: type,
 		      data: data
