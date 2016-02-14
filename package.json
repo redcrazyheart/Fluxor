@@ -1,6 +1,6 @@
 {
   "name": "fluxon",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A pluggable container for isomorphic flux applications",
   "main": "lib/index",
   "repository": {
